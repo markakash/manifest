@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Github remote -->
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <remote name="lucid"
+          fetch="https://github.com/LucidProject/"
+          revision="queen-cake" />
+
+  <!-- Lucid Repos -->
+
+  <!-- General -->
+  <project name="platform_bionic" path="bionic" remote="lucid" />
+  <project name="platform_bootable_recovery" path="bootable/recovery" remote="lucid" />
+  <project name="plaform_build" path="build/make" groups="pdk" remote="lucid">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project name="platform_build_soong" path="build/soong" remote="lucid" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <!-- Manifest -->
+  <project name="platform_manifest"                       path="manifest"           remote="lucid" />
+   
+  <!-- Frameworks -->
+  <project name="platform_frameworks_av"                  path="frameworks/av"                  remote="lucid" />
+  <project name="platform_frameworks_base"                path="frameworks/base"                remote="lucid" />
+  <project name="platform_frameworks_native"              path="frameworks/native"              remote="lucid" />
+
+</manifest>
