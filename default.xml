@@ -12,10 +12,6 @@
   <remote  name="github"
            fetch="https://github.com/" />
 
-  <remote  name="lucid"
-           fetch="https://github.com/LucidProject/"
-           revision="refs/heads/queen-cake" />
-
   <project path="build/make" name="platform/build" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
@@ -775,6 +771,9 @@
   <project path="tools/trebuchet" name="platform/tools/trebuchet" groups="tools,cts,pdk,pdk-cw-fs,pdk-fs" />
 
   <repo-hooks in-project="platform/tools/repohooks" enabled-list="pre-upload" />
+
+  <!-- Remove unused AOSP repos -->
+  <include name="remove.xml" />
 
   <!-- Lucid Goodies -->
   <include name="lucid.xml" />

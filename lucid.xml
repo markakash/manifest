@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remote name="lucid"
+          fetch="https://github.com/LucidProject/"
+          revision="refs/heads/queen-cake" />
+
   <!-- Manifest -->
   <project path="manifest" name="manifest" remote="lucid" />
 
